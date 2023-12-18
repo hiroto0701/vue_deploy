@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main  # リポジトリをチェックアウト
+        uses: actions/checkout@main
 
       - name: Install Dependencies
         run: npm install
@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy  # S3にデプロイ
+      - name: Deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
